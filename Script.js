@@ -182,7 +182,11 @@ const rng = (num) => {
   return num;
 }
 
-
-const message = `${beginnings[rng(beginnings.length)]}, the ${nouns[rng(nouns.length)]} ${middles[rng(middles.length)]} ${ends[rng(ends.length)]}`;
+const messageAssign = (piece) => {
+  let num = rng(piece.length);
+  piece = piece[num];
+  return piece;
+}
+const message = `${messageAssign(beginnings)}, the ${messageAssign(nouns)} ${messageAssign(middles)} ${messageAssign(ends)}`;
 
 console.log(message);
